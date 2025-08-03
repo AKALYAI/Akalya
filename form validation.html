@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url(https://img.pikbest.com/backgrounds/20210422/minimal-scene-with-geometrical-forms--cylinder-podium-in-pink-background-_5885722.jpg!bw700);
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+            font-size: larger;
+        }
+       input{
+        width: 250px;
+        height: 30px;
+        border-radius: 5px;
+        color:black;
+       }
+       input::placeholder{
+        padding-left: 40px;
+       }
+       button{
+        width: 100px;
+        height: 30px;
+        color: black;
+        font-size: medium;
+       }
+       label{
+        font-size:x-large large;
+       }
+    </style>
+</head>
+<body>
+    <form onsubmit="return submitForm()">
+        <label for="na"> Name</label>
+        <br>
+        <input type="text" id="na" placeholder="Enter name">
+          <br><br>
+        <span id="a1" style="color: red;"></span>
+        <br>
+        <label for="nu">Number</label>
+        <br><br>
+        <input type="number" id="nu" placeholder="Enter number">
+        <br>
+        <span id="a2"  style="color: red;"></span>
+        <br><br>
+        <label for="ma"> E-mail</label>
+        <br>
+        <input type="email" id="ma" placeholder="Enter Mail id ">
+         <br><br>
+        <span id="a3"  style="color: red;"></span>
+        <br><br>
+        <button  style="background-color: rgb(107, 252, 107);">submit</button><br>
+    </form>
+    <script>
+        function submitForm(){
+            let Name = document.getElementById('na').value;
+             let Number = document.getElementById('nu').value;
+            let Mail = document.getElementById('ma').value;
+            
+            if(Name==""){
+                document.getElementById('a1').innerHTML="Kindly Enter name"
+                return false;
+            }
+            else{
+                 document.getElementById('a1').innerHTML=""
+            }
+            if(Number==""){
+                document.getElementById('a2').innerHTML="Kindly Enter number"
+                return false;
+            }
+            else if(isNaN(number)){
+                document.getElementById('a2').innerHTML="Kindly Enter Number Type"
+                return false;
+            }
+            else{
+                document.getElementById('a2').innerHTML=""
+             }
+            if(Mail==""){
+                document.getElementById('a3').innerHTML="Kindly Enter Email"
+                return false;
+            }
+            else{
+               document.getElementById('a3').innerHTML="Kindly Enter Email"  
+            }
+             alert("Form Submitted");
+            return true;
+           
+        }  
+    </script>
+</body>
+</html>
